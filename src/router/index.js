@@ -1,14 +1,21 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import Single from '../views/Single.vue'
 
 Vue.use(VueRouter)
 
+// создаем роутинг 
 const routes = [
   {
     path: '/',
     name: 'Home',
     component: Home
+  },
+  {
+    path: '/:id',
+    name: 'Single',
+    component: Single
   },
   {
     path: '/about',
@@ -19,6 +26,7 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   }
 ]
+
 
 const router = new VueRouter({
   routes
