@@ -114,7 +114,10 @@
                         </p>
                     </div>
                     <hr>
-                    <Review />
+                    <!-- Передаем props movie.reviews и movie.id в компонент Review и передаем метод loadMovie
+                        чтобы перезагрузить страницу, когда отправляется новый комментарий
+                    -->
+                    <Review :reviews="movie.reviews" :movie="movie.id" @reLoad="loadMovie"/> 
 
                 </div>
             </div>
