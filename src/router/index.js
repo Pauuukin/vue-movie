@@ -15,7 +15,8 @@ const routes = [
   {
     path: '/:id',
     name: 'Single',
-    component: Single
+    component: Single,
+    props: true,
   },
   {
     path: '/about',
@@ -29,6 +30,7 @@ const routes = [
 
 
 const router = new VueRouter({
+  mode: 'history',
   routes
 })
 

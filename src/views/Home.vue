@@ -171,7 +171,7 @@
                                     </div>
                                     <div class="item-info-product">
                                         <h4 class="">
-                                            <a href="#" class="editContent">{{ movie.title }}</a>
+                                            <a href="#" @click="goTo(movie.id)" class="editContent">{{ movie.title }}</a>
                                         </h4>
 
                                         <div class="product_price">
@@ -203,7 +203,7 @@
 </template>
 
 <script>
-import Pagination from "../components/Pagination";
+import Pagination from "../components/Pagination"
 export default {
   name: 'Home',
   data() {
@@ -230,8 +230,11 @@ export default {
               this.total = response.count;
               return response.results
           })
-          console.log(this.listMovie)
-      }
+        //   console.log(this.listMovie)
+      },
+      goTo(id) {
+          this.$router.push({name: 'Single', params: {id: id}}) // в компонент Single передаем параметр id фильма
+      },
   }
 
 }
