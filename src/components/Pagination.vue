@@ -1,10 +1,9 @@
 <template>
     <div>
-        <ul>
+        <ul class="pagination">
             <li v-for="p in totalPages" :key="p">
                 <button class="pagination-button" 
                 :class="{active: currentPage === p}"
-                
                 @click="changePage(p)">
                     {{p}}
                 </button>
@@ -31,7 +30,7 @@ export default {
     methods: {
         changePage(pageNumber) {
             this.currentPage = pageNumber;
-            this.$emit('page-changed', pageNumber)
+            this.$emit('page-changed', pageNumber) // вызываем метод родителя Ы
         }
     }
 }

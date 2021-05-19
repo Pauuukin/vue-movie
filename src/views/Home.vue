@@ -194,7 +194,8 @@
                                 </div>
                             </div>
                         </div>
-                        <Pagination :total="total" :item="listMovie.length" @page-changed="loadListMovies()"/>
+                        <Pagination :total="total" :item="listMovie.length" @page-changed="loadListMovies"/>
+                        
                     </div>
                 </div>
             </div>
@@ -216,7 +217,7 @@ export default {
   },
   
   components: {
-    
+    Pagination
   },
   created() {
       this.loadListMovies(this.page)
